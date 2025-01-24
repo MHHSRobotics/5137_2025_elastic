@@ -1,3 +1,4 @@
+import 'package:elastic_dashboard/widgets/nt_widgets/multi-topic/reef_scoring_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dot_cast/dot_cast.dart';
@@ -29,6 +30,7 @@ import 'package:elastic_dashboard/widgets/nt_widgets/multi-topic/split_button_ch
 import 'package:elastic_dashboard/widgets/nt_widgets/multi-topic/subsystem_widget.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi-topic/three_axis_accelerometer.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi-topic/ultrasonic.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/multi-topic/reef_widget.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi-topic/yagsl_swerve_drive.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/nt_widget.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/boolean_box.dart';
@@ -155,6 +157,26 @@ class NTWidgetBuilder {
         minHeight: _normalSize * 2,
         defaultWidth: 2,
         defaultHeight: 2);
+
+    register(
+      name: ReefWidget.widgetType,
+      model: ReefModel.new,
+      widget: ReefWidget.new,
+      fromJson: ReefModel.fromJson,
+      minWidth: _normalSize * 3,
+      minHeight: _normalSize * 3,
+      defaultWidth: 3,
+      defaultHeight: 3);
+
+    register(
+      name: ReefScoringWidget.widgetType,
+      model: ReefScoringModel.new,
+      widget: ReefScoringWidget.new,
+      fromJson: ReefScoringModel.fromJson,
+      minWidth: _normalSize * 2,
+      minHeight: _normalSize * 3,
+      defaultWidth: 2,
+      defaultHeight: 3);
 
     register(
         name: CameraStreamWidget.widgetType,
